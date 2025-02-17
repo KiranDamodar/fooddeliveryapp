@@ -1,0 +1,100 @@
+.navbar{
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo{
+width: 18vw;
+}
+.navbar-menu{
+  display: flex;
+  list-style: none;
+  gap: 2vw;
+  color: #49557e;
+  font-size: 18px;
+}
+
+.navbar-right{
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+
+}
+
+.navbar-right img{
+  width: 2.5vw;
+
+}
+
+.signin-button
+{
+  background-color: transparent;
+  font-size: 16px;
+  color: #49557e;
+  border: 1px solid tomato;
+  padding: 1vw 3vw;
+  cursor: pointer;
+  border-radius: 5vw;
+ transition: .5s;
+}
+
+.signin-button:hover{
+  background-color: tomato;
+}
+
+.navbar .active{
+ border: none;
+ border-bottom: 2px solid gainsboro;
+}
+
+.navbar li{
+  cursor: pointer;
+}
+
+.basket-icon{
+  position: relative;
+}
+
+.basket-icon .dot
+{
+  position: absolute;
+  min-width: 1vw;
+  min-height: 1vw;
+  background-color: tomato;
+  border-radius: 5vw;
+  top: -0.8vw;
+  right: -0.8vw;
+
+}
+
+@media(max-width:1200px){
+  .navbar-menu{
+    font-size: 18px;
+  }
+  .signin-button{
+    font-size: 16px;
+  }
+}
+
+@media(max-width:900px){
+  .navbar-menu{
+    font-size: 15px;
+  }
+  .signin-button{
+    font-size: 13px;
+  }
+
+}
+
+@media(max-width:700px){
+  .navbar-menu{
+    display: none;
+  }
+  .signin-button{
+    font-size: 10px;
+  }
+
+}
+
