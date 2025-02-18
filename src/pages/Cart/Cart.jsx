@@ -1,11 +1,12 @@
-import { useContext } from "react"
-import "./Cart.css"
-import { StoreContext } from "../../context/StoreContext"
-import { useNavigate } from "react-router-dom"
+import { useContext } from "react";
+import "./Cart.css";
+import { StoreContext } from "../../context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-const {cartItems, food_list, removeFromCart, getTotalCarAmount}= useContext(StoreContext); 
-const navigate = useNavigate();
+  const { cartItems, food_list, removeFromCart, getTotalCarAmount } =
+    useContext(StoreContext);
+  const navigate = useNavigate();
 
   return (
     <div className="cart">
@@ -18,22 +19,25 @@ const navigate = useNavigate();
           <p>Total</p>
           <p>Remove</p>
         </div>
-        <br/>
-        <hr/>
-        {food_list.map((item,index) => {
-          if(cartItems[item.id]>0)
-          {
-            return(
-              <> <div key={index} className="cart-item-title cart-items-item">
-              <img src={item.image} alt=""/>
-              <p>{item.name}</p>
-              <p>${item.price}</p>
-              <p>{cartItems[item.id]}</p>
-              <p>${item.price*cartItems[item.id]}</p>
-              <p onClick={()=>removeFromCart(item.id)} className="cross">X</p>
-            </div>
-            <hr/></>
-             
+        <br />
+        <hr />
+        {food_list.map((item, index) => {
+          if (cartItems[item.id] > 0) {
+            return (
+              <>
+                {" "}
+                <div key={index} className="cart-item-title cart-items-item">
+                  <img src={item.image} alt="" />
+                  <p>{item.name}</p>
+                  <p>${item.price}</p>
+                  <p>{cartItems[item.id]}</p>
+                  <p>${item.price * cartItems[item.id]}</p>
+                  <p onClick={() => removeFromCart(item.id)} className="cross">
+                    X
+                  </p>
+                </div>
+                <hr />
+              </>
             );
           }
         })}
@@ -47,33 +51,32 @@ const navigate = useNavigate();
               <p>Subtotal</p>
               <p>${getTotalCarAmount()}</p>
             </div>
-            <hr/>
+            <hr />
             <div className="cart-toal-details">
               <p>Delivery Fee</p>
-              <p>${getTotalCarAmount()===0?0:2}</p>
+              <p>${getTotalCarAmount() === 0 ? 0 : 2}</p>
             </div>
-            <hr/>
+            <hr />
             <div className="cart-toal-details">
               <b>Total</b>
-              <b>${getTotalCarAmount()===0?0:getTotalCarAmount()+2}</b>
+              <b>${getTotalCarAmount() === 0 ? 0 : getTotalCarAmount() + 2}</b>
             </div>
-           
           </div>
-          <button onClick={()=>navigate("/placeorder")}>Proceed to checkout</button>
-
+          <button onClick={() => navigate("/placeorder")}>
+            Proceed to checkout
+          </button>
         </div>
-         <div className="cart-promo-code">
+        <div className="cart-promo-code">
           <div>
             <p>Enter the promo code here</p>
             <div className="cart-promo-code-input">
-              <input type="text" placeholder="promo code"/>
+              <input type="text" placeholder="promo code" />
               <button>Submit</button>
             </div>
           </div>
-         </div>
-
+        </div>
       </div>
     </div>
-  )
-}
-export default Cart
+  );
+};
+export default Cart;

@@ -1,35 +1,33 @@
-.navbar{
-  margin: 20px 0px;
+.navbar {
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar .logo{
-width: 18vw;
+.navbar .logo {
+  width: 18vw;
 }
-.navbar-menu{
+.navbar-menu {
   display: flex;
   list-style: none;
   gap: 2vw;
   color: #49557e;
   font-size: 18px;
+  align-items: center;
 }
 
-.navbar-right{
+.navbar-right {
   display: flex;
   align-items: center;
   gap: 4vw;
-
 }
 
-.navbar-right img{
+.navbar-right img {
   width: 2.5vw;
-
 }
 
-.signin-button
-{
+.signin-button {
   background-color: transparent;
   font-size: 16px;
   color: #49557e;
@@ -37,28 +35,25 @@ width: 18vw;
   padding: 1vw 3vw;
   cursor: pointer;
   border-radius: 5vw;
- transition: .5s;
+  transition: 0.5s;
 }
 
-.signin-button:hover{
+.signin-button:hover {
   background-color: tomato;
 }
-
-.navbar .active{
- border: none;
- border-bottom: 2px solid gainsboro;
+.navbar-menu .active {
+  border: none;
+  border-bottom: 1px solid gray;
 }
-
-.navbar li{
+.navbar li {
   cursor: pointer;
 }
 
-.basket-icon{
+.basket-icon {
   position: relative;
 }
 
-.basket-icon .dot
-{
+.basket-icon .dot {
   position: absolute;
   min-width: 1vw;
   min-height: 1vw;
@@ -66,35 +61,31 @@ width: 18vw;
   border-radius: 5vw;
   top: -0.8vw;
   right: -0.8vw;
-
 }
 
-@media(max-width:1200px){
-  .navbar-menu{
+@media (max-width: 1200px) {
+  .navbar-menu {
     font-size: 18px;
   }
-  .signin-button{
+  .signin-button {
     font-size: 16px;
   }
 }
 
-@media(max-width:900px){
-  .navbar-menu{
+@media (max-width: 900px) {
+  .navbar-menu {
     font-size: 15px;
   }
-  .signin-button{
+  .signin-button {
     font-size: 13px;
   }
-
 }
 
-@media(max-width:700px){
-  .navbar-menu{
+@media (max-width: 700px) {
+  .navbar-menu {
     display: none;
   }
-  .signin-button{
+  .signin-button {
     font-size: 10px;
   }
-
 }
-
