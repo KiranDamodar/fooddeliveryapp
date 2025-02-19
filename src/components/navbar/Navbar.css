@@ -6,7 +6,7 @@
 }
 
 .navbar .logo {
-  width: 18vw;
+  width: max(18vw, 150px);
 }
 .navbar-menu {
   display: flex;
@@ -24,7 +24,7 @@
 }
 
 .navbar-right img {
-  width: 2.5vw;
+  width: max(2.5vw, 20px);
 }
 
 .signin-button {
